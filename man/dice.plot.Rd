@@ -27,8 +27,7 @@ Plot of mean value and corresponding probabilities for all possible outcomes.
 Probability plot of rolling fair or loaded dice
 }
 \details{
-The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-them equals to 1. The default probabilty equals to 1/n.
+The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 }
 \examples{
 dice.plot(n = 4, col ='red', type = 'p')

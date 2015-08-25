@@ -6,8 +6,7 @@
 #' @param n number of trials
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples expt(x = c(1:3), n = 4)
 #' expt(c(2:4), 3, prob = c(0.3, 0.5, 0.2))
 #' @export
@@ -29,9 +28,7 @@ expt <- function (x, n, prob = NULL)
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
     }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
-    }
+
     plist <- list()
     for (i in 1:n) {
       plist[[i]] = prob
@@ -60,8 +57,7 @@ expt <- function (x, n, prob = NULL)
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1. The default probabilty equals to 1/n.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples expt.plot(x = c(1:3), n = 4, col ='red', type = 'p')
 #' expt.plot(c(2:4), 3, prob = c(0.3, 0.5, 0.2))
 #' @export
@@ -84,9 +80,6 @@ expt.plot <- function (x, n, prob = NULL, col = 'black',
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
 
     plist <- list()
@@ -114,8 +107,7 @@ expt.plot <- function (x, n, prob = NULL, col = 'black',
 #' @param n number of trials
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples dice(n = 4)
 #' dice(2, c(0.1, 0.2, 0.2, 0.1, 0.3, 0.1))
 #' @export
@@ -135,9 +127,6 @@ dice <- function(n, prob = NULL){
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -166,8 +155,7 @@ dice <- function(n, prob = NULL){
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1. The default probabilty equals to 1/n.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples dice.plot(n = 4, col ='red', type = 'p')
 #' dice.plot(3, prob = c(0.3, 0.1, 0.2, 0.1, 0.1, 0.2))
 #' @export
@@ -189,9 +177,6 @@ dice.plot <- function (n, prob = NULL, col = 'black', type = NULL,
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -218,8 +203,7 @@ dice.plot <- function (n, prob = NULL, col = 'black', type = NULL,
 #' @param n number of trials
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples coin(n = 4)
 #' coin(6, c(0.1, 0.9))
 #' @export
@@ -239,9 +223,6 @@ coin <- function(n, prob = NULL){
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -270,8 +251,7 @@ coin <- function(n, prob = NULL){
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all possible outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1. The default probabilty equals to 1/n.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples coin.plot(n = 4, col ='red', type = 'p')
 #' coin.plot(3, prob = c(0.3, 0.7))
 #' @export
@@ -293,9 +273,6 @@ coin.plot <- function (n, prob = NULL, col = 'black', type = NULL,
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -325,8 +302,7 @@ coin.plot <- function (n, prob = NULL, col = 'black', type = NULL,
 #' @param times number of simulations
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples expt.simu(x = c(1:3), n = 4, times = 1000)
 #' expt.simu(c(1:3), 4, 1000, prob = c(0.3, 0.1, 0.6))
 #' @export
@@ -345,9 +321,6 @@ expt.simu <- function(x, n, times, prob= NULL)
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -377,8 +350,7 @@ expt.simu <- function(x, n, times, prob= NULL)
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples expt.simu.plot(x = c(1:3), n = 4, times = 1000, col = 'red')
 #' expt.simu.plot(c(1:3), 4, 1000, prob = c(0.3, 0.1, 0.6), type = 'p')
 #' @export
@@ -399,10 +371,7 @@ expt.simu.plot <- function (x, n, times, prob = NULL, qqplot = FALSE, col = 'bla
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
     }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
-    }
-    plist <- list()
+   plist <- list()
     for (i in 1:n) {
       plist[[i]] = prob
     }
@@ -441,8 +410,7 @@ expt.simu.plot <- function (x, n, times, prob = NULL, qqplot = FALSE, col = 'bla
 #' @param times number of simulations
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples dice.simu(n = 4, times = 1000)
 #' dice.simu(4, 1000, prob = c(0.3, 0.1, 0.1, 0.1, 0.3, 0.1))
 #' @export
@@ -461,9 +429,6 @@ dice.simu <- function(n, times, prob = NULL)
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist = list()
     for (i in 1:n) {
@@ -502,8 +467,7 @@ dice.simu <- function(n, times, prob = NULL)
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples dice.simu.plot(n = 4, times = 1000, col = 'red')
 #' dice.simu.plot(4, 1000, prob = c(0.3, 0.1, 0.1, 0.1, 0.1, 0.3), type = 'p')
 #' @export
@@ -523,9 +487,6 @@ dice.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -588,8 +549,7 @@ dice.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
 #' @param times number of simulations
 #' @param prob probability assigned to each possible outcome
 #' @return Mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples coin.simu(n = 4, times = 1000)
 #' coin.simu(4, 1000, prob = c(0.3, 0.7))
 #' @export
@@ -608,9 +568,6 @@ coin.simu <- function(n, times, prob = NULL)
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -649,8 +606,7 @@ coin.simu <- function(n, times, prob = NULL)
 #' @param main an overall title for the plot
 #' @param sub a sub title for the plot
 #' @return Plot of mean value and corresponding probabilities for all simulated outcomes.
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples coin.simu.plot(n = 4, times = 1000, col = 'red')
 #' coin.simu.plot(4, 1000, prob = c(0.3, 0.7), type = 'p')
 #' @export
@@ -670,9 +626,6 @@ coin.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
     }
     if (any(prob < 0)) {
       stop("'prob' contains negative values")
-    }
-    if (sum(prob) != 1) {
-      stop("'prob' summation does not equals to 1")
     }
     plist <- list()
     for (i in 1:n) {
@@ -946,7 +899,7 @@ unif.plot <- function(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
    x=seq(min(RM),max(RM),length=100)
    curve(dnorm(x,(max + min)/2, sd=sqrt((max - min)**2/(12*n))),col="red", add=TRUE)
   }
-  if (qqplot == FALSE){
+  if (qqplot == TRUE){
    par(mfrow=c(1,2))
    hist(RM,  main = "Histogram", freq= FALSE, xlab = "mean", ylim = ylim)
    x=seq(min(RM),max(RM),length=100)
@@ -1156,8 +1109,7 @@ normal.plot <- function(n, mean=0, sd=1, times, ylim = NULL, qqplot = FALSE)
 #' @param times number of simulations
 #' @param prob probability assigned to each possible outcome
 #' @return Mean square error of simulated experiments
-#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-#' them equals to 1.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 #' @examples expt.mse(x = c(1:3), n = 4, times = 100)
 #' expt.mse(c(0.1, 4, 2), 3, times = 50, prob = c(0.3, 0.5, 0.2))
 #' @export
@@ -1179,9 +1131,6 @@ expt.mse <- function (x, n, times, prob = NULL )
       }
       if (any(prob < 0)) {
         stop("'prob' contains negative values")
-      }
-      if (sum(prob) != 1) {
-        stop("'prob' summation does not equals to 1")
       }
       plist <- list()
       for (i in 1:n) {
@@ -1209,9 +1158,6 @@ expt.mse <- function (x, n, times, prob = NULL )
       }
       if (any(prob < 0)) {
         stop("'prob' contains negative values")
-      }
-      if (sum(prob) != 1) {
-        stop("'prob' summation does not equals to 1")
       }
       plist <- list()
       for (i in 1:n) {

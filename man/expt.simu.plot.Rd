@@ -33,8 +33,7 @@ Plot of mean value and corresponding probabilities for all simulated outcomes.
 Probability plot of general simulated experiments
 }
 \details{
-The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-them equals to 1.
+The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 }
 \examples{
 expt.simu.plot(x = c(1:3), n = 4, times = 1000, col = 'red')

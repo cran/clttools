@@ -29,8 +29,7 @@ Plot of mean value and corresponding probabilities for all possible outcomes.
 General experiment plot with basic probability
 }
 \details{
-The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-them equals to 1. The default probabilty equals to 1/n.
+The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 }
 \examples{
 expt.plot(x = c(1:3), n = 4, col ='red', type = 'p')

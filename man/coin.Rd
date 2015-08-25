@@ -18,8 +18,7 @@ Mean value and corresponding probabilities for all possible outcomes.
 Mean and probability of flipping fair or loaded coin
 }
 \details{
-The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1. The sum of
-them equals to 1.
+The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
 }
 \examples{
 coin(n = 4)
