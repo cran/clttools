@@ -438,19 +438,10 @@ dice.simu <- function(n, times, prob = NULL)
 
   RM <- rowMeans(replicate(n, sample(c(1:6), size=times,
                                     replace=T, prob=prob)))
-  MEAN_VALUE <- seq(1,6,1/n)
-  freq <- rep(0, (5*n+1))
-  t <- cbind(MEAN_VALUE, freq)
-  for (i in 1 : (5*n+1))
-  {
-    for (j in 1 : times)
-    {
-      if (RM[j] == MEAN_VALUE[i])
-        t[i,2] <- t[i,2] + 1
-    }
-  }
-  PROBABILITY <- t[,2]/times
-  return(cbind(MEAN_VALUE, PROBABILITY))
+  MEAN_VALUE <- as.numeric(names(table(RM)))
+  FREQUENCY <- table(RM)
+  PROBABILITY <- FREQUENCY/times
+  return(cbind(MEAN_VALUE,FREQUENCY,PROBABILITY))
 }
 
 #' Probability Distribution Plot of Simulated Dice Rolling
@@ -497,18 +488,9 @@ dice.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
   par(mfrow=c(1,1))
   RM <- rowMeans(replicate(n, sample(c(1:6), size=times,
                                     replace=T, prob=prob)))
-  MEAN_VALUE <- seq(1,6,1/n)
-  freq <- rep(0, (5*n+1))
-  t <- cbind(MEAN_VALUE, freq)
-  for (i in 1 : (5*n+1))
-  {
-    for (j in 1 : times)
-    {
-      if (RM[j] == MEAN_VALUE[i])
-        t[i,2] = t[i,2] + 1
-    }
-  }
-  PROBABILITY <- t[,2]/times
+  MEAN_VALUE <- as.numeric(names(table(RM)))
+  FREQUENCY <- table(RM)
+  PROBABILITY <- FREQUENCY/times
   x <- MEAN_VALUE
   y <- PROBABILITY
   plot(x, y, xlab = "mean", ylab = "probability",  col = col,
@@ -519,18 +501,9 @@ dice.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
     par(mfrow=c(1,2))
     RM <- rowMeans(replicate(n, sample(c(1:6), size=times,
                                        replace=T, prob=prob)))
-    MEAN_VALUE <- seq(1,6,1/n)
-    freq <- rep(0, (5*n+1))
-    t <- cbind(MEAN_VALUE, freq)
-    for (i in 1 : (5*n+1))
-    {
-      for (j in 1 : times)
-      {
-        if (RM[j] == MEAN_VALUE[i])
-          t[i,2] = t[i,2] + 1
-      }
-    }
-    PROBABILITY <- t[,2]/times
+    MEAN_VALUE <- as.numeric(names(table(RM)))
+    FREQUENCY <- table(RM)
+    PROBABILITY <- FREQUENCY/times
     x <- MEAN_VALUE
     y <- PROBABILITY
     plot(x, y, xlab = "mean", ylab = "probability",  col = col,
@@ -576,19 +549,10 @@ coin.simu <- function(n, times, prob = NULL)
   }
   RM <- rowMeans(replicate(n, sample(c(0:1), size=times,
                                     replace=T, prob=prob)))
-  MEAN_VALUE <- seq(0,1,1/n)
-  freq <- rep(0, (n+1))
-  t <- cbind(MEAN_VALUE, freq)
-  for (i in 1 : (n+1))
-  {
-    for (j in 1 : times)
-    {
-      if (RM[j] == MEAN_VALUE[i])
-        t[i,2] = t[i,2] + 1
-    }
-  }
-  PROBABILITY <- t[,2]/times
-  return(cbind(MEAN_VALUE,PROBABILITY))
+  MEAN_VALUE <- as.numeric(names(table(RM)))
+  FREQUENCY <- table(RM)
+  PROBABILITY <- FREQUENCY/times
+  return(cbind(MEAN_VALUE,FREQUENCY,PROBABILITY))
 }
 
 
@@ -636,18 +600,9 @@ coin.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
   par(mfrow=c(1,1))
   RM <- rowMeans(replicate(n, sample(c(0:1), size=times,
                                     replace=T, prob=prob)))
-  MEAN_VALUE <- seq(0,1,1/n)
-  freq <- rep(0, (n+1))
-  t <- cbind(MEAN_VALUE, freq)
-  for (i in 1 : (n+1))
-  {
-    for (j in 1 : times)
-    {
-      if (RM[j] == MEAN_VALUE[i])
-        t[i,2] = t[i,2] + 1
-    }
-  }
-  PROBABILITY <- t[,2]/times
+  MEAN_VALUE <- as.numeric(names(table(RM)))
+  FREQUENCY <- table(RM)
+  PROBABILITY <- FREQUENCY/times
   x <- MEAN_VALUE
   y <- PROBABILITY
   plot(x, y, xlab = "mean", ylab = "probability",  col = col,
@@ -658,18 +613,9 @@ coin.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
     par(mfrow=c(1,2))
     RM <- rowMeans(replicate(n, sample(c(0:1), size=times,
                                        replace=T, prob=prob)))
-    MEAN_VALUE <- seq(0,1,1/n)
-    freq <- rep(0, (n+1))
-    t <- cbind(MEAN_VALUE, freq)
-    for (i in 1 : (n+1))
-    {
-      for (j in 1 : times)
-      {
-        if (RM[j] == MEAN_VALUE[i])
-          t[i,2] = t[i,2] + 1
-      }
-    }
-    PROBABILITY <- t[,2]/times
+    MEAN_VALUE <- as.numeric(names(table(RM)))
+    FREQUENCY <- table(RM)
+    PROBABILITY <- FREQUENCY/times
     x <- MEAN_VALUE
     y <- PROBABILITY
     plot(x, y, xlab = "mean", ylab = "probability",  col = col,
