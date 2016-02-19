@@ -629,20 +629,20 @@ coin.simu.plot <- function (n, times, prob = NULL, qqplot = FALSE, col = 'black'
 #' Histogram and Q-Q plot of simulated Poisson distribution
 #'
 #' Histogram and Q-Q plot of simulated Poisson distribution
-#' @usage pois.plot(n, lambda, times, ylim = NULL, qqplot = FALSE)
+#' @usage pois.simu.plot(n, lambda, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param lambda parameter of Poisson distribution
 #' @param times number of simulations
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Poisson distribution, red curve represents theoretical density
-#' @examples pois.plot(n = 5, lambda = 3, times = 100)
+#' @examples pois.simu.plot(n = 5, lambda = 3, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-pois.plot <- function(n, lambda, times,  ylim = NULL, qqplot = FALSE)
+pois.simu.plot <- function(n, lambda, times,  ylim = NULL, qqplot = FALSE)
 {
   lambda = lambda
     if (qqplot == FALSE){
@@ -667,7 +667,7 @@ pois.plot <- function(n, lambda, times,  ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Binomial distribution
 #'
 #' Histogram and Q-Q plot of simulated Binomial distribution
-#' @usage binom.plot(n, size, prob, times, ylim = NULL, qqplot = FALSE)
+#' @usage binom.simu.plot(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of observations
 #' @param size number of trials (zero or more)
 #' @param prob probability of success on each trial
@@ -675,13 +675,13 @@ pois.plot <- function(n, lambda, times,  ylim = NULL, qqplot = FALSE)
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Binomial distribution, red curve represents theoretical density
-#' @examples binom.plot(n = 10, size = 5, prob = 0.2, times = 100)
+#' @examples binom.simu.plot(n = 10, size = 5, prob = 0.2, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-binom.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
+binom.simu.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 {
   if (qqplot == FALSE){
   par(mfrow=c(1,1))
@@ -705,7 +705,7 @@ binom.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Negative Binomial distribution
 #'
 #' Histogram and Q-Q plot of simulated Negative Binomial distribution
-#' @usage nbinom.plot(n, size, prob, times, ylim = NULL, qqplot = FALSE)
+#' @usage nbinom.simu.plot(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of observations
 #' @param size number of trials (zero or more)
 #' @param prob probability of success on each trial
@@ -713,13 +713,13 @@ binom.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Negative Binomial distribution, red curve represents theoretical density
-#' @examples nbinom.plot(n = 10, size = 5, prob = 0.2, times = 100)
+#' @examples nbinom.simu.plot(n = 10, size = 5, prob = 0.2, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-nbinom.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
+nbinom.simu.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 {
   if (qqplot == FALSE){
   par(mfrow=c(1,1))
@@ -743,20 +743,20 @@ nbinom.plot <- function(n, size, prob, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Geometric distribution
 #'
 #' Histogram and Q-Q plot of simulated Geometric distribution
-#' @usage geom.plot(n, prob, times, ylim = NULL, qqplot = FALSE)
+#' @usage geom.simu.plot(n, prob, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of observations
 #' @param prob probability of success on each trial
 #' @param times number of simulations
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Geometric distribution, red curve represents theoretical density
-#' @examples geom.plot(n = 10, prob = 0.2, times = 100)
+#' @examples geom.simu.plot(n = 10, prob = 0.2, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-geom.plot <- function(n, prob, times, ylim = NULL, qqplot = FALSE)
+geom.simu.plot <- function(n, prob, times, ylim = NULL, qqplot = FALSE)
 {
   if (qqplot == FALSE){
   par(mfrow=c(1,1))
@@ -780,7 +780,7 @@ geom.plot <- function(n, prob, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Hypergeometric distribution
 #'
 #' Histogram and Q-Q plot of simulated Hypergeometric distribution
-#' @usage hyper.plot(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
+#' @usage hyper.simu.plot(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of observations
 #' @param a the number of white balls in the urn
 #' @param b the number of black balls in the urn
@@ -789,13 +789,13 @@ geom.plot <- function(n, prob, times, ylim = NULL, qqplot = FALSE)
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Hypergeometric distribution, red curve represents theoretical density
-#' @examples hyper.plot(n = 10, a = 10, b = 10, k = 5, times = 100)
+#' @examples hyper.simu.plot(n = 10, a = 10, b = 10, k = 5, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-hyper.plot <- function(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
+hyper.simu.plot <- function(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
 {
   if (qqplot == FALSE){
   par(mfrow=c(1,1))
@@ -822,7 +822,7 @@ hyper.plot <- function(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Uniform distribution
 #'
 #' Histogram and Q-Q plot of simulated Uniform distribution
-#' @usage unif.plot(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
+#' @usage unif.simu.plot(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param min possible minimum value of Uniform distribution. Must be finite
 #' @param max possible maximum value of Uniform distribution. Must be finite
@@ -830,13 +830,13 @@ hyper.plot <- function(n, a, b, k, times, ylim = NULL, qqplot = FALSE)
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Uniform distribution, red curve represents theoretical density
-#' @examples unif.plot(n = 5, min = 3, max = 5, times = 100)
+#' @examples unif.simu.plot(n = 5, min = 3, max = 5, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-unif.plot <- function(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
+unif.simu.plot <- function(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
 {
    RM = apply(matrix(runif(n*times, min = min, max = max), nrow=times), 1, mean)
    if (qqplot == FALSE){
@@ -858,20 +858,20 @@ unif.plot <- function(n, min = 0, max = 1, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Exponential distribution
 #'
 #' Histogram and Q-Q plot of simulated Exponential distribution
-#' @usage expo.plot(n, rate = 1, times, ylim = NULL, qqplot = FALSE)
+#' @usage expo.simu.plot(n, rate = 1, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param rate vector of rates
 #' @param times number of simulations
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Exponential distribution, red curve represents theoretical density
-#' @examples expo.plot(n = 5, rate = 2, times = 100)
+#' @examples expo.simu.plot(n = 5, rate = 2, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-expo.plot <- function(n, rate = 1, times, ylim = NULL, qqplot = FALSE )
+expo.simu.plot <- function(n, rate = 1, times, ylim = NULL, qqplot = FALSE )
 {
 
   RM = apply(matrix(rexp(n*times, rate = rate), nrow=times), 1, mean)
@@ -895,20 +895,20 @@ expo.plot <- function(n, rate = 1, times, ylim = NULL, qqplot = FALSE )
 #' Histogram and Q-Q plot of simulated Chi-Squared distribution
 #'
 #' Histogram and Q-Q plot of simulated Chi-Squared distribution
-#' @usage chisq.plot(n, df, times, ylim = NULL, qqplot = FALSE)
+#' @usage chisq.simu.plot(n, df, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param df degrees of freedom (non-negative, but can be non-integer)
 #' @param times number of simulations
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Chi-Squared distribution, red curve represents theoretical density
-#' @examples chisq.plot(n = 5, df = 4, times = 100)
+#' @examples chisq.simu.plot(n = 5, df = 4, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-chisq.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
+chisq.simu.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
 {
   RM = apply(matrix(rchisq(n*times, df = df), nrow=times), 1, mean)
   if (qqplot == FALSE){
@@ -931,7 +931,7 @@ chisq.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
 #' Histogram and Q-Q plot of simulated Gamma distribution
 #'
 #' Histogram and Q-Q plot of simulated Gamma distribution
-#' @usage gamm.plot(n, shape, rate = 1, scale = 1/rate, times, ylim = NULL, qqplot = FALSE)
+#' @usage gamm.simu.plot(n, shape, rate = 1, scale = 1/rate, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param shape shape parameter
 #' @param rate vector of rates
@@ -940,13 +940,13 @@ chisq.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Gamma distribution, red curve represents theoretical density
-#' @examples gamm.plot(n = 5, shape = 3, rate = 1, times = 100)
+#' @examples gamm.simu.plot(n = 5, shape = 3, rate = 1, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
- gamm.plot <- function(n, shape, rate = 1, scale=1/rate, times, ylim = NULL, qqplot = FALSE)
+ gamm.simu.plot <- function(n, shape, rate = 1, scale=1/rate, times, ylim = NULL, qqplot = FALSE)
 {
   RM = apply(matrix(rgamma(n*times, shape, rate = rate),
                     nrow=times), 1, mean)
@@ -970,7 +970,7 @@ chisq.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
 #' Histogram and Q-Q plot of simulated Beta distribution
 #'
 #' Histogram and Q-Q plot of simulated Beta distribution
-#' @usage beta.plot(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
+#' @usage beta.simu.plot(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param shape1 non-negative parameters of the Beta distribution
 #' @param shape2 non-negative parameters of the Beta distribution
@@ -978,13 +978,13 @@ chisq.plot <- function(n, df, times, ylim = NULL, qqplot = FALSE )
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Beta distribution, red curve represents theoretical density
-#' @examples beta.plot(n = 5, shape1 = 3, shape2 = 1, times = 100)
+#' @examples beta.simu.plot(n = 5, shape1 = 3, shape2 = 1, times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-beta.plot <- function(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
+beta.simu.plot <- function(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
 {
   RM = apply(matrix(rbeta(n*times, shape1 = shape1, shape2 = shape2),
                     nrow=times), 1, mean)
@@ -1012,7 +1012,7 @@ beta.plot <- function(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
 #' Histogram and Q-Q plot of simulated Normal distribution
 #'
 #' Histogram and Q-Q plot of simulated Normal distribution
-#' @usage normal.plot(n, mean=0, sd=1, times, ylim = NULL, qqplot = FALSE)
+#' @usage normal.simu.plot(n, mean=0, sd=1, times, ylim = NULL, qqplot = FALSE)
 #' @param n number of trials in one simulation
 #' @param mean vector of means
 #' @param sd vector of standard deviations
@@ -1020,13 +1020,13 @@ beta.plot <- function(n, shape1, shape2, times, ylim = NULL, qqplot = FALSE)
 #' @param ylim range of y-axis
 #' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
 #' @return Histogram and Q-Q plot of simulated Normal distribution, red curve represents theoretical density
-#' @examples normal.plot(n = 5, mean = 3, sd =2,  times = 100)
+#' @examples normal.simu.plot(n = 5, mean = 3, sd =2,  times = 100)
 #' @export
 #' @importFrom graphics curve hist par plot
 #' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif
 #'
 
-normal.plot <- function(n, mean=0, sd=1, times, ylim = NULL, qqplot = FALSE)
+normal.simu.plot <- function(n, mean=0, sd=1, times, ylim = NULL, qqplot = FALSE)
 {
   RM = apply(matrix(rnorm(n*times, mean = mean, sd = sd), nrow=times), 1, mean)
   if (qqplot == FALSE){
@@ -1122,4 +1122,64 @@ expt.mse <- function (x, n, times, prob = NULL )
   DF[is.na(DF)] <- 0
   MSE = mean((DF[,2]-DF[,3])**2)
   return(MSE)
+}
+
+
+
+#' Histogram and Q-Q plot of any given continuous distribution
+#'
+#' Histogram and Q-Q plot of any given continuous distribution
+#' @usage distr.simu.plot(distr, n, times, prob = NULL, qqplot = FALSE, col = "black", type = NULL,
+#' main = NULL, sub = NULL)
+#' @param distr vector, all possible outcomes, population distribution
+#' @param n number of trials in one simulation
+#' @param times number of simulations
+#' @param prob probability assigned to each possible outcome
+#' @param qqplot an argument to output Q-Q plot or not, can be TRUE or FALSE
+#' @param col color of the plot
+#' @param type type of plot
+#' @param main an overall title for the plot
+#' @param sub a sub title for the plot
+#' @return Plot of mean value and corresponding probabilities for all simulated outcomes.
+#' @details The default probabilty equals to 1/n. All the assigned probabilites must between 0 and 1.
+#' @examples distr.simu.plot(distr = c(1,0.2,3.4,5,6.6,1.1,5,4.7,2.33,3), n = 4, times = 1000, col = 'red')
+#' @export
+#' @importFrom graphics curve hist par plot
+#' @importFrom stats aggregate dnorm qqline qqnorm rbeta rbinom rchisq rexp rgamma rgeom rhyper rnbinom rnorm rpois runif var
+#'
+
+distr.simu.plot <- function (distr, n, times, prob = NULL, qqplot = FALSE, col = "black",
+                        type = NULL, main = NULL, sub = NULL)
+{
+  if (is.null(prob)) {
+    prob <- rep(1/length(distr), length(distr))
+  }
+  else {
+    if (!identical(length(distr), length(prob))) {
+      stop("'prob' is not the same length as 'possible outcomes'")
+    }
+    if (any(prob < 0)) {
+      stop("'prob' contains negative values")
+    }
+    plist <- list()
+    for (i in 1:n) {
+      plist[[i]] = prob
+    }
+  }
+  if (qqplot == FALSE){
+    par(mfrow=c(1,1))
+    RM <- rowMeans(replicate(n, sample(distr, size = times, replace = T,
+                                       prob = prob)))
+    hist(RM,  main = "Histogram", freq = FALSE, xlab = "mean")
+    x=seq(min(RM),max(RM),length=100)
+    curve(dnorm(x, mean=mean(distr), sd = sqrt(var(distr)/n)),col="red", add=TRUE)
+  }
+  if (qqplot == TRUE){
+    par(mfrow=c(1,2))
+    hist(RM,  main = "Histogram", freq = FALSE, xlab = "mean")
+    x=seq(min(RM),max(RM),length=100)
+    curve(dnorm(x, mean=mean(distr), sd = sqrt(var(distr)/n)),col="red", add=TRUE)
+    qqnorm(RM)
+    qqline(RM)
+  }
 }
